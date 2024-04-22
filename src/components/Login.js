@@ -6,6 +6,7 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { BG_LOGIN, USER_AVATAR } from '../utils/constants';
 
 const Login = () => {
     const [isSignin,setIsSignin]=useState(true);
@@ -30,7 +31,7 @@ const Login = () => {
                 // Signed up 
                 const user = userCredential.user;
                 updateProfile(user, {
-                    displayName:name.current.value,photoURL:"https://cdn.iconscout.com/icon/free/png-256/free-laptop-user-1-1179329.png?f=webp"
+                    displayName:name.current.value,photoURL:USER_AVATAR
                   }).then(() => {
                     const {uid,email,displayName,photoURL} = auth.currentUser;
                     dispatch(addUser({uid,email,displayName,photoURL}))
@@ -67,7 +68,7 @@ const Login = () => {
     <div>
         <Header/>
         <div className='absolute'>
-            <img src="https://assets.nflxext.com/ffe/siteui/vlv3/9f46b569-aff7-4975-9b8e-3212e4637f16/bbfea491-8423-467c-bd2c-0502b97b76ea/AE-en-20240415-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+            <img src={BG_LOGIN}
             alt="netflix-bg">
 
             </img>
