@@ -6,7 +6,13 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NWRhZGJiOWRhN2NkMzY5YTQwYjE4MDljODRjNTJiYiIsInN1YiI6IjY2MjUyNmQ4MjIxYmE2MDE3YzE0ODY0MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8jsKyfQYNlU7wtdFtlI1AP1oyk6MuenJg6JfcbzQdE8'
+      Authorization: 'Bearer'+process.env.REACT_APP_TMDB_KEY
     }
   };
-  export const IMAGE_CDN_URL="https://image.tmdb.org/t/p/w500/"
+  export const IMAGE_CDN_URL="https://image.tmdb.org/t/p/w500/";
+  export const SUPPORTED_LANGUAGES = [
+    { identifier: "english", name: "English" },
+    { identifier: "hindi", name: "Hindi" },
+    { identifier: "tamil", name: "Tamil" },
+    ];
+  export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY
